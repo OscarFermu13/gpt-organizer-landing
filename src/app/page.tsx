@@ -1,103 +1,108 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-white text-gray-900 px-4 md:px-8 py-16">
+      {/* Hero */}
+      <section className="max-w-4xl mx-auto text-center space-y-6">
+        <h1 className="text-4xl md:text-5xl font-bold">
+          Organiza tus conversaciones con ChatGPT en segundos
+        </h1>
+        <p className="text-lg text-gray-600">
+          ChatFolders te permite crear carpetas, mover chats y encontrar lo que buscas sin perder tiempo.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+          <Button className="text-lg px-6 py-4">🗂️ Instalar gratis</Button>
+          <Button variant="outline" className="text-lg px-6 py-4">
+            <Link href="/login">🔍 Ver demo</Link>
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Features */}
+      <section className="mt-24 max-w-3xl mx-auto space-y-8">
+        <h2 className="text-3xl font-semibold text-center">Características principales</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+          <li>🔹 Crea carpetas personalizadas</li>
+          <li>🔹 Arrastra y suelta chats fácilmente</li>
+          <li>🔹 Etiquetas y colores</li>
+          <li>🔹 Búsqueda instantánea</li>
+          <li>🔹 Sincronización en la nube (Pro)</li>
+          <li>🔹 Diseño limpio e intuitivo</li>
+        </ul>
+      </section>
+
+      {/* FAQ con acordeón */}
+      <section className="mt-24 max-w-2xl mx-auto space-y-6">
+        <h2 className="text-3xl font-semibold text-center">Preguntas frecuentes</h2>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>¿ChatFolders es gratuito?</AccordionTrigger>
+            <AccordionContent>
+              Sí, puedes usar la versión básica con hasta 3 carpetas.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>¿Qué incluye la versión Pro?</AccordionTrigger>
+            <AccordionContent>
+              Carpetas ilimitadas, etiquetas, sincronización, búsqueda avanzada y más.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>¿Accede a mis conversaciones?</AccordionTrigger>
+            <AccordionContent>
+              No. Todo se guarda localmente o en tu cuenta si usas sincronización. No leemos el contenido de tus chats.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger>¿Funciona con ChatGPT Plus?</AccordionTrigger>
+            <AccordionContent>
+              Sí, es totalmente compatible con la versión gratuita y Plus.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
+
+      {/* Testimonios */}
+      <section className="mt-24 max-w-5xl mx-auto space-y-6">
+        <h2 className="text-3xl font-semibold text-center">Lo que dicen nuestros usuarios</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Ana, investigadora</CardTitle>
+            </CardHeader>
+            <CardContent>
+              “Tenía más de 100 chats sin orden… ahora trabajo como si tuviera un asistente personal.”
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Tomás, desarrollador</CardTitle>
+            </CardHeader>
+            <CardContent>
+              “Tan simple y tan útil. No puedo volver atrás. Esta extensión me ahorra tiempo todos los días.”
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-32 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} ChatFolders. Todos los derechos reservados.
       </footer>
-    </div>
+    </main>
   );
 }
