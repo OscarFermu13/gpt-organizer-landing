@@ -45,7 +45,7 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* FAQ con acordeón */}
+      {/* FAQ con acordeón  */}
       <section className="mt-24 max-w-2xl mx-auto space-y-6">
         <h2 className="text-3xl font-semibold text-center">Preguntas frecuentes</h2>
         <Accordion type="single" collapsible className="w-full">
