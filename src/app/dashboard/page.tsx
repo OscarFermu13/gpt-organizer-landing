@@ -39,7 +39,7 @@ export default function Dashboard() {
   }
 
   const openGumroad = () => {
-    window.open('https://oscarfermi.gumroad.com/l/juwkck', '_blank');
+    window.open('https://oscarfermi.gumroad.com/l/gpt-organizer', '_blank');
   };
 
   return (
